@@ -47,8 +47,7 @@ class MenuController
                 exit(0)
             when 7
                 system "clear"
-                address_book.eradicate_entries
-                puts "All entries have eradicated from existence!"
+                eradicate_entries
                 main_menu
             else
                 system "clear"
@@ -56,6 +55,23 @@ class MenuController
                 main_menu
             end
         end
+
+    def eradicate_entries
+        puts "Are you absolutely sure? (y/n)"
+        proceed = gets.chomp
+
+        if proceed === 'y'
+            @address_book = AddressBook.new
+            puts "All entries have eradicated from existence!"
+            sleep 1
+        else
+            puts "Entry eradication has been canceled!"
+            sleep 1
+        end
+        system "clear"
+        main_menu
+    end
+
 
     def view_all_entries
         address_book.entries.each do |entry|
@@ -208,5 +224,6 @@ class MenuController
 
         puts "Updated entry:"
         puts entry
+        sleep 1
     end
 end

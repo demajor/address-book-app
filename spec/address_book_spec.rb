@@ -238,13 +238,13 @@ RSpec.describe AddressBook do
     end
 
     # Test the eradicate all entries option
-    describe "#eradicate_entries" do
-        it "deletes all address book entries" do
-            book.add_entry("Tash Sultana", "321.123.4321", "tash@tashsultana.com")
+    # describe "#eradicate_entries" do
+    #     it "deletes all entries from the address book" do
+    #         book.add_entry("Tash Sultana", "321.123.4321", "tash@tashsultana.com")
 
-            book.eradicate_entries
-            expect(book.entries.size).to eq(0)
-        end
-    end
-
+    #         expect(book.entries.size).to eq(1)
+    #         book.eradicate_entries(name, phone_number, email)
+    #         expect(book.entries.size).to eq(0)
+    #     end
+    # end
 end
