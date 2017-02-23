@@ -15,6 +15,7 @@ class MenuController
         puts "4 - View Entry Number n"
         puts "5 - Import entries from a CSV"
         puts "6 - Exit"
+        puts "7 - Eradicate all entries"
         print "Enter your selection: "
 
         selection = gets.to_i
@@ -44,6 +45,11 @@ class MenuController
                 system "clear"
                 puts "Goodbye!"
                 exit(0)
+            when 7
+                system "clear"
+                address_book.eradicate_entries
+                puts "All entries have eradicated from existence!"
+                main_menu
             else
                 system "clear"
                 puts "Sorry, that is not a valid input"

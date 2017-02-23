@@ -71,6 +71,10 @@ class AddressBook
 
         return nil
     end
+
+    def eradicate_entries
+        entries = []
+    end
               
 end
 
